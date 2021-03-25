@@ -7,11 +7,10 @@ class PostsController < ApplicationController
     @posts = Post.all
     @post = Post.new
   end
-
+  
   # GET /posts/1 or /posts/1.json
   def show
-    
-  end
+  end 
 
   # GET /posts/new
   def new
@@ -43,6 +42,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
+        format.js { render nothing: true, notice: 'Actualizacion exitosa'}
         format.html { redirect_to @post, notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }
       else

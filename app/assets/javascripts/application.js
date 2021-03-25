@@ -12,6 +12,12 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require jquery/dist/jquery.js
+//= require jquery/dist/jquery
 //= require turbolinks
+//= require best_in_place
 //= require_tree .
+
+$(document).ready(function() {
+    /* Activating Best In Place */
+    jQuery(".best_in_place").best_in_place();
+});
